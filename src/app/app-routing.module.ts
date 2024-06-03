@@ -1,10 +1,22 @@
+import { ListarProdutosComponent } from './components/produtos/listar-produtos/listar-produtos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { CadastrarProdutosComponent } from './components/produtos/cadastrar-produtos/cadastrar-produtos.component';
+import { AtualizarProdutoComponent } from './components/produtos/atualizar-produto/atualizar-produto.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', component:HomeComponent},
+  {path: 'produtos', component:ListarProdutosComponent},
+  {path:'produtos/cadastrar', component:CadastrarProdutosComponent},
+  {path: 'produtos/atualizar/:id', component:AtualizarProdutoComponent}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+ }
